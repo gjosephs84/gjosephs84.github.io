@@ -35,8 +35,9 @@ div {
     background-color: #BD4F6C;
     border-color: #BD4F6C;
 }
-.btn-secondary {
+.btn-primary:hover {
     background-color: #762D40;
+    border-color: #762D40;
 }
 .card {
     background-color: whitesmoke;
