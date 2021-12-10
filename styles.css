@@ -68,11 +68,38 @@ a:visited:hover {
     }
     .video {
         grid-column-end: span 2;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
         
+    }
+    .embedded {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     .full-width-text {
         padding-left: 20px;
         grid-column-end: span 2;
+    }
+    .btn-primary {
+        background-color: #BD4F6C;
+        border-color: #BD4F6C;
+    }
+    .btn-primary:hover {
+        background-color: #FBD87F;
+        border-color: #FBD87F;
+    }
+    .btn-primary:visited {
+        color: white;
+    }
+    
+    .card {
+        background-color: whitesmoke;
+        margin-bottom: 20px;
     }
 }
 
@@ -89,7 +116,17 @@ a:visited:hover {
     }
     .video {
         grid-column-end: span 3;
-        
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;  
+    }
+    .embedded {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     .full-width-text {
         padding-left: 20px;
@@ -99,6 +136,24 @@ a:visited:hover {
     .project-description {
         padding-left: 20px;
         grid-column-end: span 2;
+    }
+
+    .btn-primary {
+            background-color: #BD4F6C;
+            border-color: #BD4F6C;
+        }
+    .btn-primary:hover {
+            background-color: #FBD87F;
+            border-color: #FBD87F;
+        }
+    .btn-primary:visited {
+            color: white;
+        }
+        
+    .card {
+            background-color: whitesmoke;
+            margin-bottom: 20px;
+        }
 }
 
 
