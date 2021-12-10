@@ -87,9 +87,13 @@ a:visited:hover {
     border-color: #BD4F6C;
 }
 .btn-primary:hover {
-    background-color: #762D40;
-    border-color: #762D40;
+    background-color: #FBD87F;
+    border-color: #FBD87F;
 }
+.btn-primary:visited {
+    color: white;
+}
+
 .card {
     background-color: whitesmoke;
 }
