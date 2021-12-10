@@ -95,6 +95,10 @@ a:visited:hover {
         padding-left: 20px;
         grid-column-end: span 3;
     }
+
+    .project-description {
+        padding-left: 20px;
+        grid-column-end: span 2;
 }
 
 
@@ -102,8 +106,7 @@ a:visited:hover {
     grid-column-end: span;
 }
 .project-image {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: span;
 }
 
 .project-image img {
@@ -112,8 +115,7 @@ a:visited:hover {
 
 .project-description {
     padding-left: 20px;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: span;
 }
 
 .video {
