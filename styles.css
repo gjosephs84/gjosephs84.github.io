@@ -56,6 +56,13 @@ a:visited:hover {
 
 .logo-grid {
     display: grid;
+    grid-row-gap: 20px;
+}
+
+@media (min-width: 300px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 600px) {
