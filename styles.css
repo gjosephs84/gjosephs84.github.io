@@ -203,9 +203,24 @@ a:visited:hover {
     padding-left: 20px;
     grid-column-end: span;
 }
+
+.card {
+    position: relative;
+}
+
+.card-text {
+    min-height: 180px;
+    max-height: 180px;
+}
+
+
+
 .btn-primary {
     background-color: #BD4F6C;
     border-color: #BD4F6C;
+    min-width: 100%;
+    
+    
 }
 .btn-primary:hover {
     background-color: #FBD87F;
