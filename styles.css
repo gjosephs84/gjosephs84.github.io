@@ -59,6 +59,15 @@ a:visited:hover {
     grid-row-gap: 20px;
 }
 
+.social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 300px;
+    grid-column-gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 @media (min-width: 300px) {
     .logo-grid {
         grid-template-columns: repeat(2, 1fr);
