@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- My CSS-->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&display=swap" rel="stylesheet">
+    <title>Gregory Josephs: OTTrack - A Case Study</title>
+  </head>
+  <body>
+      <!-- Container to keep everything else centered -->
+    <div style="justify-items: center; min-width: 100%; padding: 20px;">
+      <main class="content">
+        <div class="the-nav-bar">
+          <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://gjosephs84.github.io">Gregory Josephs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://gjosephs84.github.io">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://gjosephs84.github.io/projects.html">Projects</a>
+              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Connect
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://www.linkedin.com/in/gjosephs">LinkedIn</a></li>
+                <li><a class="dropdown-item" href="https://www.twitter.com/gjosephs">Twitter</a></li>
+                <li><a class="dropdown-item" href="mailto:greg.josephs@gmail.com">Email</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation Bar -->
+        </div>
+        <div class="centered">
+            <h1>OTTrack - A Case Study</h1></div>
+
+        <div class="full-width-text">
+            <h2>The Problem</h2>
+
+              <p>Overtime shifts for collective bargaining unit (union) employees in the Aquatics department at MIT are both a valuable and necessary tool for the sustainable operation of MIT’s recreation facilities. However, the process for offering and assigning these shifts is cumbersome and subject to significant human error. The result is a prolonged and inefficient process that exposes the institute to grievances and potential penalties when overtime is not assigned correctly.
+              </p>
+              <h3>In More Detail ...</h3>
+              <p>The traditional process for assigning overtime follows these steps:</p>
+              <ul>
+                <li>A manager lists the shift or shifts in an excel spreadsheet with the shift details in the far-left columns, and a column for each union employee to mark their interest in working each shift</li>
+                <li>Management manually reviews each employee’s regular schedule and indicates “working” or “off” for employees who are unable to work the shifts because of schedule conflicts or pre-approved time off</li>
+                <li>The spreadsheet is printed, and presented to each employee, in person, in seniority order, to gather preferences. If an employee is interested in more than one shift, they rank their choices.</li>
+                <li>Beginning with the employee whose seniority falls directly after the last employee to have received overtime, management manually assigns that employee’s top available shift choice, then proceeds to the next employee, in seniority order, starting back at the beginning as necessary, until all shifts are assigned, or all shift preferences are exhausted.</li>
+                <li>Management notifies employees of the results</li>
+              </ul>
+              <p>In total, the process can take several days, and if it is discovered that assignment began with the wrong employee, or any other error occurred in the assignment process, affected employees have a right to start a grievance process. This may ultimately result in the institute paying out hours at an overtime rate to that employee for time not actually worked.
+              </p>
+              
+              <h2>The Solution</h2>
+            </div>
+            <div class="full-width-text">
+              <p>OTTrack is a simple-but-powerful web app that removes the potential for human error in assigning shifts, while also streamlining the process. Utilizing a mobile-first design on the employee side, the software provides a single place to both select overtime shifts and receive assignment results. From the management side, the software effortlessly keeps track of who has received overtime, who should receive it next, manages schedule conflicts, and reports out results. </p>
+              <h2>The Challenges</h2>
+              <h3>User Interface</h3>
+              <p>For OTTrack to be truly useful, it needed to meet employees where they are. Namely: their phones. This meant focusing on a mobile-first design that was simple, beautiful, but robust enough to contain all the information necessary to allow employees to make informed decisions about which shifts they would like to work.</p>
+              </div>
+              <div class="project-image">
+                <img src="images/ottrack-images/select-shifts.jpg" style="max-width: 100%">
+              </div>
+              <div class="project-description">
+              <p>This led to the development of the ShiftTable component, which has turned out to be one of the real workhorses of this project. Using subcomponents including a DateBox (which creates an attractive, contemporary-styled &lt;div&gt; containing abbreviated weekday, month, and day information), the ShiftTable component maps a &lt;div&gt; that shows the date, start time, end time, start location, and end location of a shift, at a minimum. Through options available as part of the component’s props, it may also display buttons to approve or delete the shift, rank it amongst others (in the case of employees selecting multiple shifts), and display assignment results. As a container for one or more shifts, the ShiftTable component maps shifts in all their various forms for both management and employees.</p>
+              <p>But perhaps the most valuable aspect of the ShiftTable component is its simplicity from a user experience standpoint. When selecting shifts, all an employee must do to get started is tap an available shift from their mobile device and watch it turn from red to green. Simple. Done.</p></div>
+              <div class="full-width-text">
+              <h3>Assignment Algorithm</h3>
+              <p>On the surface, the shift assignment algorithm is not particularly complex, though nuance and special circumstances presented some challenges in its development. The general idea is, once employee shift preferences have been collected, the software combs through those responses and creates an array of objects keyed to each responding employee, with subarrays of their “yesses” keyed to the unique id (from the PostgreSQL database) for each shift, along with their ranking preference for that shift.</p>
+            </div>
+            <div class="project-image">
+              <p style="margin-left: 20px;">Beginning with the employee whose seniority falls directly after the last employee to receive overtime, the software looks at that employee’s first ranked choice, and assigns the shift if it is available, then removes that shift from the employee’s array of “yesses” and moves on to the next employee. If an employee’s highest ranked choice of shift is not available (because, for instance, it has already been assigned), that shift is removed from the employee’s “yesses” array, and the software attempts to assign the next highest ranked shift. The process continues until all shifts are assigned, or all preferences are exhausted.</p></div>
+              <div class="project-description">
+                <img src="images/ottrack-images/shift-requests.jpg" style="max-width: 100%">
+            </div>
+            <div class="full-width-text">
+              <h3>Special Circumstances</h3>
+              <p>The devil, as they say, is in the details. While the initial logic is sound, there are certain nuances a human can immediately navigate that software cannot without a developer’s intervention. The first issue was that of overlapping overtime shifts. There exist certain times when two shifts that start and end at the same time may be offered, or two or more that overlap with each other on the same day. In these circumstances, an employee might opt for two or more of these overlapping shifts. This exposed the software to the potential to assign overlapping shifts to the same employee.</p>
+              <p>The solution involved adding a step after the assignment of a shift to comb through an employee’s remaining “yesses” and delete any shifts that conflicted before moving on.</p>
+              <p>What about “I can work part of this shift if no one can take all of it”?</p>
+              <p>In my initial presentation of the software to management, I was asked if I could handle this situation. While I was able to develop an elegant solution to this problem, it definitely provided the biggest challenge of this project.</p>
+            </div>
+            <div class="project-image">
+                <img src="images/ottrack-images/employee-partial.jpg" style="max-width: 100%">
+            </div>
+            <div class="project-description">
+              <p>To address this issue, I began with the user interface on the employee end. During the shift selection process, I added the unique shift IDs to the Shift component. Beneath the list of available shifts, I added a &lt;select&gt; element to opt to add “partial availability.” If an employee chooses “yes” from the &lt;select&gt; a new form is displayed instructing the employee to choose the ID of the shift for which they are partially available, then specify their own start and end times.</p>
+              <p>These preferences are later bundled with the employee’s selection of whole shifts.</p>
+            </div>
+            <div class="project-description">
+              <p>From the management end, once the assignment of whole shifts is complete, the software checks to see if any shifts have not been assigned. If so, employee partial availability preferences are examined to see if IDs match between empty shifts and the “partials” employees indicated when submitting their preferences.</p>
+              <p>These are aggregated and presented in a ShiftTable, with an “approve” button inside each Shift component. Management may then manually review the options and select the “partials” that best serve the needs of the facilities, regardless of seniority.</p>
+            </div>
+            <div class="project-image">
+                <img src="images/ottrack-images/manager-partial.jpg" style="max-width: 100%">
+            </div>
+            <div class="full-width-text">
+              <h3>Notification</h3>
+              <p>OTTrack is currently in beta. While there is some discussion of using a pay service such as Twilio to integrate SMS and automatic emails to notify employees of new shifts, and shift assignment results, to begin with, I needed a simple and free solution.</p>
+              <p>The answer, as it turns out, was the tried and true mailto: </p>
+              <p>When management creates or assigns shifts, the user is presented with a button to notify employees. The button action is linked to a mailto: command that generates a new email in the user’s mail client, intelligently auto-populating the recipients, subject line, and body. This way, all management has to do is click/tap the “Notify Employees” button, and then click “send” on the email that pops up.</p>
+              <h2>Under The Hood</h2>
+              <p>OTTrack is a single page application (SPA) developed using create-react-app and Strapi. The front end is currently deployed using Github pages, with the backend and PostgreSQL database hosted by Heroku. It utilizes React Bootstrap for the navigation menu, and SheetJS to generate excel reports of overtime results.</p>
+              <h2>Roadmap of Future Improvements</h2>
+              <p>Pending potential inclusion of SMS/email services such as Twilio, future versions of OTTrack will include a system for employees to submit Paid Time Off requests through the app. This will allow employees to track their PTO, see when leave requests are approved, and allow management to track and approve time off for employees from a single location.</p>
+              <h2>Conclusion</h2>
+              <p>OTTrack will provide a stable, simple, and elegant solution for handling overtime shifts at MIT. By streamlining the process, and reducing the institute’s exposure to costly grievances, OTTrack will better allow employees to plan and manage their time, while allowing everyone to focus instead on the important work of providing a world-class recreation experience to facility patrons.</p>
+            </div>
+              </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+  <footer style="margin: 20px">
+    <p>Copyright 2023 Gregory Josephs - <a href="mailto:greg.josephs@gmail.com">greg.josephs@gmail.com</a></p>
+  </footer>
+</html>

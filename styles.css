@@ -11,6 +11,30 @@ h1 {
     font-size: 40pt;
 }
 
+h2 {
+    color: #BD4F6C;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 30pt;
+}
+
+h3 {
+    color: #BD4F6C;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 25pt;
+}
+
+li {
+    line-height: 1.5em;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16pt;
+}
+
 p {
     line-height: 1.5em;
     font-family: 'Alegreya Sans', sans-serif;
